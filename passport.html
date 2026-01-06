@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Venezuela Passport - Discover Venezuela</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/passport.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌴</span>
+                <span class="logo-text">Venezuela</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beaches.html">Beaches</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="passport.html" class="active">My Passport</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="passport-container">
+        <!-- Hero Section - Passport Book -->
+        <section class="passport-hero">
+            <div class="travel-pattern"></div>
+
+            <div class="passport-book">
+                <div class="passport-cover">
+                    <div class="passport-seal">🛂</div>
+                    <h1 class="passport-title">Your Venezuela Passport</h1>
+                    <p class="passport-subtitle">Explorer of Paradise</p>
+                    <div class="passport-level-display" id="current-level">
+                        <span class="level-icon">🧭</span>
+                        <span>Explorer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Dashboard -->
+        <section class="stats-dashboard">
+            <div class="stats-grid">
+                <!-- Total Points -->
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value" id="total-points" data-stat="points">0</span>
+                    <div class="stat-label">Total Points</div>
+                    <div class="stat-sublabel" id="next-level-info">Start exploring!</div>
+                </div>
+
+                <!-- Badges Earned -->
+                <div class="stat-card">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-value">
+                        <span id="badges-earned" data-stat="badges">0</span>
+                        <span id="badges-total" style="font-size: 1.5rem; color: #718096;">/ 12</span>
+                    </span>
+                    <div class="stat-label">Badges Earned</div>
+                    <div class="stat-sublabel">Collect them all!</div>
+                </div>
+
+                <!-- Places Visited -->
+                <div class="stat-card">
+                    <span class="stat-icon">📍</span>
+                    <span class="stat-value" id="places-visited" data-stat="places">0</span>
+                    <div class="stat-label">Places Visited</div>
+                    <div class="stat-sublabel">Keep exploring!</div>
+                </div>
+
+                <!-- Streak Counter -->
+                <div class="stat-card">
+                    <span class="stat-icon">🔥</span>
+                    <span class="stat-value" id="streak-days">0</span>
+                    <div class="stat-label">Day Streak</div>
+                    <div class="stat-sublabel">Visit daily for bonuses!</div>
+                </div>
+
+                <!-- Time Exploring -->
+                <div class="stat-card">
+                    <span class="stat-icon">⏱️</span>
+                    <span class="stat-value" style="font-size: 2rem;" id="time-exploring">0m</span>
+                    <div class="stat-label">Time Exploring</div>
+                    <div class="stat-sublabel">Your adventure time</div>
+                </div>
+
+                <!-- Exploration Progress -->
+                <div class="stat-card">
+                    <span class="stat-icon">🗺️</span>
+                    <span class="stat-value" id="exploration-percent">0<span style="font-size: 1.5rem;">%</span></span>
+                    <div class="stat-label">Explored</div>
+                    <div class="stat-sublabel">Venezuela discovered</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Badges Showcase -->
+        <section class="badges-section">
+            <div class="section-header">
+                <h2 class="section-title">🏆 Achievement Badges</h2>
+                <p class="section-subtitle">Unlock badges by exploring Venezuela</p>
+            </div>
+            <div class="badges-grid" id="badges-grid">
+                <!-- Badges will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Places Visited - Stamp Collection -->
+        <section class="stamps-section">
+            <div class="section-header">
+                <h2 class="section-title">🗺️ Travel Stamps</h2>
+                <p class="section-subtitle">Your passport stamp collection</p>
+            </div>
+            <div class="stamps-grid" id="stamps-grid">
+                <!-- Stamps will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Travel Timeline -->
+        <section class="timeline-section">
+            <div class="section-header">
+                <h2 class="section-title">📜 Your Journey Timeline</h2>
+                <p class="section-subtitle">Recent adventures and milestones</p>
+            </div>
+            <div class="timeline" id="timeline">
+                <!-- Timeline items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Level Progress Section -->
+        <section class="level-section">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Level Progress</h2>
+                <p class="section-subtitle">Your explorer ranking</p>
+            </div>
+            <div class="level-card">
+                <div class="current-level" id="level-display-name">
+                    <span class="level-icon">🧭</span>
+                    <span>Explorer</span>
+                </div>
+
+                <div class="level-progress-container">
+                    <div class="level-progress-bar">
+                        <div class="level-progress-fill" id="level-progress-bar" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+
+                <div class="level-milestones">
+                    <div class="milestone">
+                        <div class="milestone-name">🧭 Explorer</div>
+                        <div class="milestone-points">0 pts</div>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone-name">⛰️ Adventurer</div>
+                        <div class="milestone-points">500 pts</div>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone-name">🔭 Discoverer</div>
+                        <div class="milestone-points">1,500 pts</div>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone-name">👑 Legend</div>
+                        <div class="milestone-points">3,000 pts</div>
+                    </div>
+                </div>
+
+                <div class="next-level-preview" id="next-level-preview">
+                    <div class="next-level-title">Next: Adventurer</div>
+                    <div class="next-level-text">Keep exploring to reach the next level!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export/Share Section -->
+        <section class="actions-section">
+            <div class="section-header">
+                <h2 class="section-title">⚙️ Manage Your Journey</h2>
+                <p class="section-subtitle">Export, share, or reset your progress</p>
+            </div>
+            <div class="actions-grid">
+                <button class="action-button primary" id="export-progress">
+                    <span class="action-icon">📥</span>
+                    Export Progress
+                </button>
+                <button class="action-button secondary" id="share-journey">
+                    <span class="action-icon">🔗</span>
+                    Share Journey
+                </button>
+                <button class="action-button danger" id="reset-progress">
+                    <span class="action-icon">🔄</span>
+                    Reset Progress
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>🗺️ Explore</h3>
+                <ul class="footer-quick-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="beaches.html">Beaches</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="map.html">Interactive Map</a></li>
+                    <li><a href="passport.html">My Passport</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="footer-section">
+                <h3>🌐 Connect</h3>
+                <p style="color: var(--light-gray); margin-bottom: 1rem;">Follow the journey</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Website">🌐</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="#" class="social-icon" title="Twitter">🐦</a>
+                </div>
+            </div>
+
+            <!-- Gamification Widget Section -->
+            <div class="footer-section">
+                <h3>🎮 Your Progress</h3>
+                <div class="footer-gamification-widget">
+                    <div class="footer-stats">
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Points:</span>
+                            <span class="footer-stat-value" id="footer-points">0</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Level:</span>
+                            <span class="footer-stat-value" id="footer-level">Explorer</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Badges:</span>
+                            <span class="footer-stat-value" id="footer-badges">0/12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Discover Venezuela. Your adventure begins here.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Your Adventure...</div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/universal.js"></script>
+    <script src="js/passport.js"></script>
+</body>
+</html>

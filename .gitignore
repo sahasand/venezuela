@@ -1,17 +1,61 @@
 # OS files
 .DS_Store
 Thumbs.db
+Desktop.ini
 
 # Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-*
 
 # Logs
 *.log
+npm-debug.log*
 
 # Temporary files
 *.tmp
 *.bak
 *.backup
+*.cache
+
+# Dependencies (if npm is added later)
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+.parcel-cache/
+
+# Test artifacts
+test-screenshots/
+screenshots/
+*.test.js
+test-*.js
+playwright-report/
+test-results/
+
+# Auto-generated docs (keep source, ignore generated)
+IMPLEMENTATION-SUMMARY.md
+GAMIFICATION-GUIDE.md
+POLISH-SUMMARY.md
+POLISH-CHECKLIST.md
+WHAT-CHANGED.md
+QUICKSTART.md
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Firebase (if added later)
+.firebase/
+firebase-debug.log
+.firebaserc
+
+# Misc
+*.zip
+*.tar.gz
+.claude-cache/

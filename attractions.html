@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Wonders - Discover Venezuela</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/attractions.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌴</span>
+                <span class="logo-text">Venezuela</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beaches.html">Beaches</a></li>
+                <li><a href="attractions.html" class="active">Attractions</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="passport.html">My Passport</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="attractions-hero">
+        <!-- Animated Mist/Clouds Overlay -->
+        <div class="mist-overlay">
+            <div class="mist-layer mist-layer-1"></div>
+            <div class="mist-layer mist-layer-2"></div>
+            <div class="mist-layer mist-layer-3"></div>
+        </div>
+
+        <!-- Mountain Parallax Layers -->
+        <div class="mountain-parallax">
+            <div class="mountain-silhouette mountain-back"></div>
+            <div class="mountain-silhouette mountain-mid"></div>
+            <div class="mountain-silhouette mountain-front"></div>
+        </div>
+
+        <!-- Flying Birds -->
+        <div class="floating-birds">
+            <div class="bird bird-1">🦅</div>
+            <div class="bird bird-2">🦜</div>
+            <div class="bird bird-3">🦅</div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="attractions-hero-content">
+            <h1 class="attractions-hero-title">Natural Wonders of Venezuela</h1>
+            <p class="attractions-hero-subtitle">
+                Journey through ancient rainforests and towering waterfalls<br>
+                Discover the wild heart of South America's greatest treasures
+            </p>
+            <div class="scroll-indicator">
+                <span>Explore the Wilderness</span>
+                <span class="scroll-arrow">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attraction Cards Section -->
+    <section class="attraction-destinations">
+        <div class="section-header">
+            <h2 class="section-title">Legendary Destinations</h2>
+            <p class="section-subtitle">Click each wonder to reveal its secrets!</p>
+        </div>
+
+        <div class="attraction-cards-container">
+            <!-- Angel Falls Card -->
+            <div class="attraction-card" data-attraction="angel-falls">
+                <div class="card-inner-attraction">
+                    <!-- CSS Art Front -->
+                    <div class="attraction-art angel-falls-art">
+                        <div class="sky-bg"></div>
+                        <div class="cliff-wall"></div>
+                        <div class="cliff-top"></div>
+                        <div class="waterfall-stream"></div>
+                        <div class="waterfall-stream-2"></div>
+                        <div class="mist-bottom"></div>
+                        <div class="jungle-base"></div>
+                    </div>
+
+                    <div class="attraction-info">
+                        <h3 class="attraction-name">Angel Falls</h3>
+                        <p class="attraction-tagline">World's Highest Waterfall</p>
+                        <span class="height-badge">979m / 3,212ft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Roraima Card -->
+            <div class="attraction-card" data-attraction="mount-roraima">
+                <div class="card-inner-attraction">
+                    <!-- CSS Art Front -->
+                    <div class="attraction-art roraima-art">
+                        <div class="sky-bg"></div>
+                        <div class="cloud-layer cloud-1"></div>
+                        <div class="cloud-layer cloud-2"></div>
+                        <div class="tepui-base"></div>
+                        <div class="tepui-cliff"></div>
+                        <div class="tepui-top"></div>
+                        <div class="jungle-floor"></div>
+                    </div>
+
+                    <div class="attraction-info">
+                        <h3 class="attraction-name">Mount Roraima</h3>
+                        <p class="attraction-tagline">Tabletop Mountain</p>
+                        <span class="height-badge">2,810m / 9,219ft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canaima National Park Card -->
+            <div class="attraction-card" data-attraction="canaima">
+                <div class="card-inner-attraction">
+                    <!-- CSS Art Front -->
+                    <div class="attraction-art canaima-art">
+                        <div class="sky-bg"></div>
+                        <div class="lagoon-water"></div>
+                        <div class="tepui-distant tepui-d1"></div>
+                        <div class="tepui-distant tepui-d2"></div>
+                        <div class="tepui-distant tepui-d3"></div>
+                        <div class="jungle-edge"></div>
+                        <div class="lagoon-shore"></div>
+                    </div>
+
+                    <div class="attraction-info">
+                        <h3 class="attraction-name">Canaima National Park</h3>
+                        <p class="attraction-tagline">UNESCO World Heritage</p>
+                        <span class="height-badge">30,000 km²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Attraction Details -->
+    <div class="attraction-modal" id="attractionModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Wildlife Spotlight Section -->
+    <section class="wildlife-section">
+        <div class="section-header">
+            <h2 class="section-title">Wildlife Spotlight</h2>
+            <p class="section-subtitle">Discover the incredible creatures of Venezuela</p>
+        </div>
+
+        <div class="wildlife-grid">
+            <div class="wildlife-card" data-animal="jaguar">
+                <div class="wildlife-icon">🐆</div>
+                <div class="wildlife-name">Jaguar</div>
+                <div class="wildlife-tooltip">
+                    <strong>Panthera onca</strong><br>
+                    The apex predator of Venezuelan rainforests. These powerful cats can bite through turtle shells!
+                </div>
+            </div>
+
+            <div class="wildlife-card" data-animal="crocodile">
+                <div class="wildlife-icon">🐊</div>
+                <div class="wildlife-name">Orinoco Crocodile</div>
+                <div class="wildlife-tooltip">
+                    <strong>Crocodylus intermedius</strong><br>
+                    One of the largest crocodilian species, found only in the Orinoco River basin.
+                </div>
+            </div>
+
+            <div class="wildlife-card" data-animal="harpy">
+                <div class="wildlife-icon">🦅</div>
+                <div class="wildlife-name">Harpy Eagle</div>
+                <div class="wildlife-tooltip">
+                    <strong>Harpia harpyja</strong><br>
+                    The most powerful raptor in the Americas with talons larger than bear claws!
+                </div>
+            </div>
+
+            <div class="wildlife-card" data-animal="dolphin">
+                <div class="wildlife-icon">🐬</div>
+                <div class="wildlife-name">Pink River Dolphin</div>
+                <div class="wildlife-tooltip">
+                    <strong>Inia geoffrensis</strong><br>
+                    Freshwater dolphins that turn pinker with age and excitement!
+                </div>
+            </div>
+
+            <div class="wildlife-card" data-animal="capybara">
+                <div class="wildlife-icon">🦫</div>
+                <div class="wildlife-name">Capybara</div>
+                <div class="wildlife-tooltip">
+                    <strong>Hydrochoerus hydrochaeris</strong><br>
+                    The world's largest rodent, semi-aquatic and highly social animals.
+                </div>
+            </div>
+
+            <div class="wildlife-card" data-animal="howler">
+                <div class="wildlife-icon">🐒</div>
+                <div class="wildlife-name">Howler Monkey</div>
+                <div class="wildlife-tooltip">
+                    <strong>Alouatta seniculus</strong><br>
+                    Known for their loud howls that can be heard up to 5 kilometers away!
+                </div>
+            </div>
+        </div>
+
+        <div class="wildlife-progress">
+            <span class="wildlife-icon-display">🦜</span>
+            <span class="wildlife-spotted">0</span>
+            <span class="wildlife-label">/ 6 animals spotted</span>
+        </div>
+    </section>
+
+    <!-- Adventure Difficulty Section -->
+    <section class="difficulty-section">
+        <div class="section-header">
+            <h2 class="section-title">Adventure Difficulty</h2>
+            <p class="section-subtitle">Know before you go!</p>
+        </div>
+
+        <div class="difficulty-meters">
+            <div class="difficulty-item" data-difficulty="80">
+                <div class="difficulty-header">
+                    <span class="difficulty-icon">🧗</span>
+                    <span class="difficulty-name">Angel Falls Trek</span>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-fill" style="width: 0%" data-target="80"></div>
+                </div>
+                <div class="difficulty-label">
+                    <span>Challenging</span>
+                    <span>4-5 days</span>
+                </div>
+            </div>
+
+            <div class="difficulty-item" data-difficulty="95">
+                <div class="difficulty-header">
+                    <span class="difficulty-icon">⛰️</span>
+                    <span class="difficulty-name">Mount Roraima Climb</span>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-fill" style="width: 0%" data-target="95"></div>
+                </div>
+                <div class="difficulty-label">
+                    <span>Very Challenging</span>
+                    <span>6-8 days</span>
+                </div>
+            </div>
+
+            <div class="difficulty-item" data-difficulty="40">
+                <div class="difficulty-header">
+                    <span class="difficulty-icon">🚤</span>
+                    <span class="difficulty-name">Canaima Lagoon Tour</span>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-fill" style="width: 0%" data-target="40"></div>
+                </div>
+                <div class="difficulty-label">
+                    <span>Moderate</span>
+                    <span>1-2 days</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="attractions-quiz-section">
+        <div class="section-header">
+            <h2 class="section-title">Nature Quiz Challenge!</h2>
+            <p class="section-subtitle">Test your knowledge and earn 50 points per question</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question" data-question="1">
+                <h3 class="question-text">What is the height of Angel Falls, the world's highest uninterrupted waterfall?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">807 meters</button>
+                    <button class="quiz-option" data-correct="true">979 meters</button>
+                    <button class="quiz-option" data-correct="false">1,054 meters</button>
+                    <button class="quiz-option" data-correct="false">892 meters</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" data-question="2">
+                <h3 class="question-text">Mount Roraima inspired which famous author's novel "The Lost World"?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">Jules Verne</button>
+                    <button class="quiz-option" data-correct="true">Arthur Conan Doyle</button>
+                    <button class="quiz-option" data-correct="false">H.G. Wells</button>
+                    <button class="quiz-option" data-correct="false">Edgar Rice Burroughs</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" data-question="3">
+                <h3 class="question-text">What percentage of Canaima National Park is covered by table-top mountains (tepuis)?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">About 25%</button>
+                    <button class="quiz-option" data-correct="false">Nearly 80%</button>
+                    <button class="quiz-option" data-correct="true">Approximately 65%</button>
+                    <button class="quiz-option" data-correct="false">Around 50%</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+        </div>
+
+        <div class="quiz-score">
+            <span class="score-label">Score:</span>
+            <span class="score-value">0</span>
+            <span class="score-total">/ 3</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>🗺️ Explore</h3>
+                <ul class="footer-quick-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="beaches.html">Beaches</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="map.html">Interactive Map</a></li>
+                    <li><a href="passport.html">My Passport</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="footer-section">
+                <h3>🌐 Connect</h3>
+                <p style="color: var(--light-gray); margin-bottom: 1rem;">Follow the journey</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Website">🌐</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="#" class="social-icon" title="Twitter">🐦</a>
+                </div>
+            </div>
+
+            <!-- Gamification Widget Section -->
+            <div class="footer-section">
+                <h3>🎮 Your Progress</h3>
+                <div class="footer-gamification-widget">
+                    <div class="footer-stats">
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Points:</span>
+                            <span class="footer-stat-value" id="footer-points">0</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Level:</span>
+                            <span class="footer-stat-value" id="footer-level">Explorer</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Badges:</span>
+                            <span class="footer-stat-value" id="footer-badges">0/12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Discover Venezuela. Your adventure begins here.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Your Adventure...</div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Confetti Canvas (for quiz) -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="js/notifications.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/universal.js"></script>
+    <script src="js/attractions.js"></script>
+</body>
+</html>

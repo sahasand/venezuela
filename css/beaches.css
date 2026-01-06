@@ -1,0 +1,1036 @@
+/* ===================================
+   BEACH TOWNS PAGE - COMPREHENSIVE STYLES
+   Beach Color Palette:
+   - Ocean Blues: #0077B6, #00B4D8, #90E0EF
+   - Sandy Beige: #F4D35E
+   - Sunset Coral: #FF6B6B
+   - White Foam: #FFFFFF
+   =================================== */
+
+/* ===================================
+   BEACH HERO SECTION
+   =================================== */
+.beach-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #0077B6 0%, #00B4D8 50%, #90E0EF 100%);
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+/* Wave Overlay Animation */
+.waves-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.wave-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.wave-layer-1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,100 600,60 T1200,60 L1200,120 L0,120 Z" fill="%23FFFFFF" fill-opacity="0.3"/></svg>');
+    background-size: 1200px 120px;
+    animation: wave 15s linear infinite;
+    opacity: 0.5;
+}
+
+.wave-layer-2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,80 Q300,40 600,80 T1200,80 L1200,120 L0,120 Z" fill="%23FFFFFF" fill-opacity="0.5"/></svg>');
+    background-size: 1200px 120px;
+    animation: wave 20s linear infinite;
+    opacity: 0.7;
+}
+
+.wave-layer-3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,100 Q300,60 600,100 T1200,100 L1200,120 L0,120 Z" fill="%23FFFFFF" fill-opacity="0.7"/></svg>');
+    background-size: 1200px 120px;
+    animation: wave 25s linear infinite;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1200px); }
+}
+
+/* Floating Elements */
+.beach-floating {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Sand Particles */
+.sand-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #F4D35E;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float-up 10s linear infinite;
+}
+
+.sand-1 { left: 10%; animation-delay: 0s; }
+.sand-2 { left: 30%; animation-delay: 2s; }
+.sand-3 { left: 50%; animation-delay: 4s; }
+.sand-4 { left: 70%; animation-delay: 6s; }
+.sand-5 { left: 20%; animation-delay: 1s; }
+.sand-6 { left: 85%; animation-delay: 3s; }
+
+@keyframes float-up {
+    0% {
+        bottom: -10px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+/* Seagulls */
+.seagull {
+    position: absolute;
+    font-size: 2rem;
+    animation: fly-across 20s linear infinite;
+}
+
+.seagull-1 {
+    top: 20%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.seagull-2 {
+    top: 40%;
+    animation-delay: 8s;
+    animation-duration: 30s;
+}
+
+.seagull-3 {
+    top: 60%;
+    animation-delay: 15s;
+    animation-duration: 20s;
+}
+
+@keyframes fly-across {
+    0% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+    45% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+    100% {
+        left: calc(100% + 100px);
+        transform: scaleX(-1);
+    }
+}
+
+/* Hero Content */
+.beach-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 2rem;
+}
+
+.beach-hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    animation: fade-in-up 1s ease-out;
+}
+
+.beach-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    animation: fade-in-up 1s ease-out 0.3s both;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fade-in-up 1s ease-out 0.6s both;
+}
+
+.scroll-arrow {
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* ===================================
+   BEACH DESTINATIONS SECTION
+   =================================== */
+.beach-destinations {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #0077B6;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.beach-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Beach Card - Flip Animation */
+.beach-card {
+    perspective: 1000px;
+    height: 500px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.beach-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+}
+
+/* Hover Effects */
+.beach-card:hover .card-front {
+    box-shadow: 0 20px 40px rgba(0, 119, 182, 0.4);
+    transform: translateY(-10px);
+}
+
+.beach-card:hover .beach-css-art {
+    transform: scale(1.05);
+}
+
+/* CSS Art Container */
+.beach-css-art {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+/* Los Roques CSS Art */
+.los-roques-art .sky-gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #90E0EF 0%, #00B4D8 100%);
+}
+
+.los-roques-art .ocean-gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #00B4D8 0%, #0077B6 100%);
+}
+
+.los-roques-art .island {
+    position: absolute;
+    bottom: 20%;
+    background: #F4D35E;
+    border-radius: 50% 50% 0 0;
+}
+
+.los-roques-art .island-1 {
+    left: 20%;
+    width: 60px;
+    height: 30px;
+}
+
+.los-roques-art .island-2 {
+    left: 40%;
+    width: 40px;
+    height: 20px;
+}
+
+.los-roques-art .island-3 {
+    left: 65%;
+    width: 50px;
+    height: 25px;
+}
+
+.los-roques-art .coral {
+    position: absolute;
+    bottom: 10%;
+    width: 20px;
+    height: 20px;
+    background: #FF6B6B;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.los-roques-art .coral-1 { left: 25%; }
+.los-roques-art .coral-2 { left: 70%; }
+
+/* Morrocoy CSS Art */
+.morrocoy-art .sky-gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, #90E0EF 0%, #00B4D8 100%);
+}
+
+.morrocoy-art .water-gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #00B4D8 0%, #0077B6 100%);
+}
+
+.morrocoy-art .mangrove {
+    position: absolute;
+    bottom: 30%;
+    width: 3px;
+    height: 80px;
+    background: #2D5016;
+}
+
+.morrocoy-art .mangrove::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    width: 23px;
+    height: 23px;
+    background: #52B788;
+    border-radius: 50%;
+}
+
+.morrocoy-art .mangrove-1 { left: 25%; }
+.morrocoy-art .mangrove-2 { left: 50%; height: 90px; }
+.morrocoy-art .mangrove-3 { left: 75%; }
+
+.morrocoy-art .cayo {
+    position: absolute;
+    bottom: 15%;
+    background: #F4D35E;
+    border-radius: 50%;
+}
+
+.morrocoy-art .cayo-1 {
+    left: 15%;
+    width: 50px;
+    height: 25px;
+}
+
+.morrocoy-art .cayo-2 {
+    right: 20%;
+    width: 40px;
+    height: 20px;
+}
+
+/* Margarita CSS Art */
+.margarita-art .sky-gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, #FF6B6B 0%, #90E0EF 100%);
+}
+
+.margarita-art .ocean-blue {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #00B4D8 0%, #0077B6 100%);
+}
+
+.margarita-art .island-large {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 60px;
+    background: #52B788;
+    border-radius: 50% 50% 0 0;
+}
+
+.margarita-art .beach-strip {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 15px;
+    background: #F4D35E;
+}
+
+.margarita-art .palm {
+    position: absolute;
+    bottom: 40%;
+    width: 4px;
+    height: 40px;
+    background: #8B4513;
+}
+
+.margarita-art .palm::before {
+    content: '🌴';
+    position: absolute;
+    top: -20px;
+    left: -8px;
+    font-size: 1.2rem;
+}
+
+.margarita-art .palm-1 { left: 35%; }
+.margarita-art .palm-2 { right: 35%; }
+
+.margarita-art .boat {
+    position: absolute;
+    bottom: 35%;
+    right: 25%;
+    width: 30px;
+    height: 20px;
+    background: white;
+    border-radius: 0 50% 50% 0;
+}
+
+.margarita-art .boat::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 20px solid #FF6B6B;
+}
+
+/* Card Info */
+.card-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.beach-name {
+    font-size: 1.8rem;
+    color: #0077B6;
+    margin-bottom: 0.5rem;
+}
+
+.beach-tagline {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.best-time-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #FF6B6B 0%, #F4D35E 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.flip-hint {
+    text-align: center;
+    padding: 1rem;
+    color: #0077B6;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Card Back Content */
+.card-back-content {
+    text-align: left;
+}
+
+.card-back .beach-name {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.beach-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.activities h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.activities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activities li {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.explore-beach-btn {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    color: #0077B6;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.explore-beach-btn:hover {
+    background: #F4D35E;
+    transform: scale(1.05);
+}
+
+.explore-beach-btn .checkmark {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    font-size: 1.3rem;
+    color: #52B788;
+}
+
+.explore-beach-btn.explored .checkmark {
+    display: inline;
+}
+
+.explore-beach-btn.explored {
+    background: #52B788;
+    color: white;
+}
+
+/* ===================================
+   BEACH CHECKLIST SECTION
+   =================================== */
+.beach-checklist-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F7FA 100%);
+}
+
+.checklist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.checklist-items {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item.checked {
+    color: #52B788;
+}
+
+.check-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.checklist-item.checked .check-icon {
+    content: '☑';
+}
+
+.checklist-item.checked .check-icon::before {
+    content: '☑';
+}
+
+.beach-label {
+    flex: 1;
+}
+
+/* Progress Container */
+.progress-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0077B6;
+}
+
+.progress-percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF6B6B;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: #E0E0E0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0077B6 0%, #00B4D8 50%, #90E0EF 100%);
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.progress-message {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   BEACH QUIZ SECTION
+   =================================== */
+.beach-quiz-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5E6 100%);
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.quiz-question {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    color: #0077B6;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.quiz-option {
+    padding: 1rem;
+    background: #F0F9FF;
+    border: 2px solid #00B4D8;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    background: #00B4D8;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+.quiz-option.correct {
+    background: #52B788;
+    color: white;
+    border-color: #52B788;
+}
+
+.quiz-option.wrong {
+    background: #FF6B6B;
+    color: white;
+    border-color: #FF6B6B;
+    animation: shake 0.5s;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.quiz-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: none;
+}
+
+.quiz-feedback.show {
+    display: block;
+}
+
+.quiz-feedback.correct {
+    background: #E8F5E9;
+    color: #2D5016;
+    border-left: 4px solid #52B788;
+}
+
+.quiz-feedback.wrong {
+    background: #FFEBEE;
+    color: #C62828;
+    border-left: 4px solid #FF6B6B;
+}
+
+.quiz-score {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0077B6;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.score-label {
+    color: #666;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.score-value {
+    color: #FF6B6B;
+}
+
+/* ===================================
+   PHOTO GALLERY SECTION
+   =================================== */
+.photo-gallery-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #0077B6 0%, #00B4D8 100%);
+    overflow: hidden;
+}
+
+.photo-gallery-section .section-title,
+.photo-gallery-section .section-subtitle {
+    color: white;
+}
+
+.gallery-carousel {
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 1rem;
+    animation: scroll-gallery 30s linear infinite;
+}
+
+.gallery-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-gallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gallery-photo {
+    min-width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-photo:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.gallery-photo.clicked {
+    animation: photo-flash 0.5s;
+}
+
+@keyframes photo-flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Gradient "Photos" */
+.photo-1 { background: linear-gradient(135deg, #90E0EF 0%, #00B4D8 100%); }
+.photo-2 { background: linear-gradient(135deg, #F4D35E 0%, #FF6B6B 100%); }
+.photo-3 { background: linear-gradient(135deg, #52B788 0%, #2D5016 100%); }
+.photo-4 { background: linear-gradient(135deg, #FF6B6B 0%, #0077B6 100%); }
+.photo-5 { background: linear-gradient(135deg, #00B4D8 0%, #F4D35E 100%); }
+.photo-6 { background: linear-gradient(135deg, #0077B6 0%, #52B788 100%); }
+
+.photographer-progress {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.photo-icon {
+    font-size: 2rem;
+}
+
+.photos-viewed {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* ===================================
+   FLOATING BEACH BALLS
+   =================================== */
+.beach-balls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.beach-ball {
+    position: absolute;
+    font-size: 3rem;
+    animation: float-beach-ball 6s ease-in-out infinite;
+}
+
+.ball-1 {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.ball-2 {
+    right: 15%;
+    top: 40%;
+    animation-delay: 2s;
+}
+
+.ball-3 {
+    left: 70%;
+    top: 60%;
+    animation-delay: 4s;
+}
+
+@keyframes float-beach-ball {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+/* ===================================
+   CONFETTI CANVAS
+   =================================== */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    .beach-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .beach-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .beach-cards-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .beach-card {
+        height: 450px;
+    }
+
+    .beach-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .beach-hero-title {
+        font-size: 2rem;
+    }
+
+    .beach-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-photo {
+        min-width: 250px;
+        height: 150px;
+    }
+}

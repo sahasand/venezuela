@@ -1,0 +1,1041 @@
+/* ===================================
+   ATTRACTIONS PAGE - NATURAL WONDERS
+   Color Palette:
+   - Forest Greens: #2D5016, #52B788, #95D5B2
+   - Earth Tones: #8B4513, #A0522D
+   - Mist: #E8E8E8, #B8B8B8
+   - Water: #4FC3F7, #81D4FA
+   =================================== */
+
+/* ===================================
+   ATTRACTIONS HERO SECTION
+   =================================== */
+.attractions-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #2D5016 0%, #52B788 50%, #95D5B2 100%);
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+/* Animated Mist/Cloud Overlay */
+.mist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.mist-layer {
+    position: absolute;
+    width: 200%;
+    height: 150px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4), transparent);
+    border-radius: 50%;
+    animation: float-mist 30s linear infinite;
+}
+
+.mist-layer-1 {
+    top: 20%;
+    left: -50%;
+    animation-duration: 25s;
+    opacity: 0.3;
+}
+
+.mist-layer-2 {
+    top: 40%;
+    left: -50%;
+    animation-duration: 35s;
+    animation-delay: 5s;
+    opacity: 0.4;
+}
+
+.mist-layer-3 {
+    top: 60%;
+    left: -50%;
+    animation-duration: 40s;
+    animation-delay: 10s;
+    opacity: 0.5;
+}
+
+@keyframes float-mist {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+/* Mountain Parallax Layers */
+.mountain-parallax {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.mountain-silhouette {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mountain-back {
+    clip-path: polygon(0 100%, 10% 60%, 30% 70%, 50% 50%, 70% 65%, 90% 55%, 100% 100%);
+    background: rgba(45, 80, 22, 0.3);
+    transform: translateZ(-3px) scale(1.1);
+}
+
+.mountain-mid {
+    clip-path: polygon(0 100%, 15% 70%, 35% 75%, 55% 60%, 75% 70%, 95% 65%, 100% 100%);
+    background: rgba(45, 80, 22, 0.5);
+    transform: translateZ(-2px) scale(1.05);
+}
+
+.mountain-front {
+    clip-path: polygon(0 100%, 20% 75%, 40% 80%, 60% 70%, 80% 75%, 100% 80%, 100% 100%);
+    background: rgba(45, 80, 22, 0.7);
+    transform: translateZ(-1px);
+}
+
+/* Flying Birds */
+.floating-birds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bird {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: fly-across 25s linear infinite;
+}
+
+.bird-1 {
+    top: 15%;
+    animation-delay: 0s;
+    animation-duration: 30s;
+}
+
+.bird-2 {
+    top: 35%;
+    animation-delay: 10s;
+    animation-duration: 35s;
+}
+
+.bird-3 {
+    top: 55%;
+    animation-delay: 20s;
+    animation-duration: 28s;
+}
+
+@keyframes fly-across {
+    0% {
+        left: -100px;
+        transform: scaleX(1) translateY(0);
+    }
+    25% {
+        transform: scaleX(1) translateY(-20px);
+    }
+    50% {
+        transform: scaleX(-1) translateY(0);
+    }
+    75% {
+        transform: scaleX(-1) translateY(20px);
+    }
+    100% {
+        left: calc(100% + 100px);
+        transform: scaleX(-1) translateY(0);
+    }
+}
+
+/* Hero Content */
+.attractions-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 2rem;
+}
+
+.attractions-hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.5);
+    animation: fade-in-up 1s ease-out;
+}
+
+.attractions-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+    animation: fade-in-up 1s ease-out 0.3s both;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fade-in-up 1s ease-out 0.6s both;
+}
+
+.scroll-arrow {
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* ===================================
+   ATTRACTION DESTINATIONS SECTION
+   =================================== */
+.attraction-destinations {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F9F0 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #2D5016;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.attraction-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Attraction Card with Scroll Reveal */
+.attraction-card {
+    height: 500px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.attraction-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slide-up 0.8s ease-out forwards;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3D Tilt Effect on Hover */
+.attraction-card:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(5deg) scale(1.03);
+    box-shadow: 0 20px 50px rgba(45, 80, 22, 0.4);
+}
+
+.card-inner-attraction {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS Art Container */
+.attraction-art {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .attraction-art {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   ANGEL FALLS CSS ART
+   =================================== */
+.angel-falls-art .sky-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, #81D4FA 0%, #4FC3F7 100%);
+}
+
+.angel-falls-art .cliff-wall {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 70%;
+    background: linear-gradient(90deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.angel-falls-art .cliff-top {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 30px;
+    background: #654321;
+    border-radius: 50%;
+}
+
+.angel-falls-art .waterfall-stream {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 65%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    animation: waterfall-flow 3s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.angel-falls-art .waterfall-stream-2 {
+    position: absolute;
+    top: 25%;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 63%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+    animation: waterfall-flow 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes waterfall-flow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.angel-falls-art .mist-bottom {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 80px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.7), transparent);
+    border-radius: 50%;
+    animation: mist-pulse 4s ease-in-out infinite;
+}
+
+@keyframes mist-pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; }
+    50% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+}
+
+.angel-falls-art .jungle-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, #52B788 0%, #2D5016 100%);
+}
+
+/* ===================================
+   MOUNT RORAIMA CSS ART
+   =================================== */
+.roraima-art .sky-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #81D4FA 0%, #4FC3F7 100%);
+}
+
+.roraima-art .cloud-layer {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: float-cloud 15s ease-in-out infinite;
+}
+
+.roraima-art .cloud-1 {
+    top: 15%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.roraima-art .cloud-2 {
+    top: 25%;
+    right: 25%;
+    animation-delay: 3s;
+}
+
+@keyframes float-cloud {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.roraima-art .tepui-base {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 120px;
+    background: linear-gradient(180deg, #A0522D 0%, #8B4513 100%);
+    clip-path: polygon(10% 100%, 90% 100%, 80% 0, 20% 0);
+}
+
+.roraima-art .tepui-cliff {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 15px;
+    background: #654321;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.roraima-art .tepui-top {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 80px;
+    background: linear-gradient(180deg, #8B4513 0%, #A0522D 100%);
+    border-radius: 10px 10px 0 0;
+}
+
+.roraima-art .jungle-floor {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(180deg, #52B788 0%, #2D5016 100%);
+}
+
+/* ===================================
+   CANAIMA NATIONAL PARK CSS ART
+   =================================== */
+.canaima-art .sky-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, #81D4FA 0%, #4FC3F7 100%);
+}
+
+.canaima-art .lagoon-water {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #4FC3F7 0%, #0098D9 100%);
+}
+
+.canaima-art .tepui-distant {
+    position: absolute;
+    top: 25%;
+    background: linear-gradient(180deg, #A0522D 0%, #8B4513 100%);
+    clip-path: polygon(10% 100%, 90% 100%, 80% 20%, 20% 20%);
+}
+
+.canaima-art .tepui-d1 {
+    left: 10%;
+    width: 80px;
+    height: 100px;
+    opacity: 0.7;
+}
+
+.canaima-art .tepui-d2 {
+    left: 40%;
+    width: 90px;
+    height: 120px;
+    opacity: 0.8;
+}
+
+.canaima-art .tepui-d3 {
+    right: 15%;
+    width: 75px;
+    height: 95px;
+    opacity: 0.75;
+}
+
+.canaima-art .jungle-edge {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #2D5016;
+    clip-path: polygon(0 100%, 5% 0, 15% 50%, 25% 20%, 35% 60%, 45% 10%, 55% 70%, 65% 30%, 75% 80%, 85% 40%, 95% 0, 100% 100%);
+}
+
+.canaima-art .lagoon-shore {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background: linear-gradient(180deg, #F4D35E 0%, #D4A574 100%);
+}
+
+/* ===================================
+   ATTRACTION INFO
+   =================================== */
+.attraction-info {
+    padding: 2rem;
+    background: white;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.attraction-name {
+    font-size: 1.8rem;
+    color: #2D5016;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.attraction-tagline {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.height-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #52B788 0%, #2D5016 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ===================================
+   MODAL FOR ATTRACTION DETAILS
+   =================================== */
+.attraction-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.attraction-modal.show {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    animation: fade-in 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 10001;
+    background: white;
+    border-radius: 20px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 2rem;
+    animation: modal-expand 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modal-expand {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10002;
+}
+
+.modal-close:hover {
+    background: #FF6B6B;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 3rem 2rem 2rem;
+}
+
+/* ===================================
+   WILDLIFE SPOTLIGHT SECTION
+   =================================== */
+.wildlife-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #2D5016 0%, #52B788 100%);
+    color: white;
+}
+
+.wildlife-section .section-title,
+.wildlife-section .section-subtitle {
+    color: white;
+}
+
+.wildlife-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.wildlife-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wildlife-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.wildlife-card:hover .wildlife-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wildlife-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.wildlife-card:nth-child(1) .wildlife-icon { animation-delay: 0s; }
+.wildlife-card:nth-child(2) .wildlife-icon { animation-delay: 0.5s; }
+.wildlife-card:nth-child(3) .wildlife-icon { animation-delay: 1s; }
+.wildlife-card:nth-child(4) .wildlife-icon { animation-delay: 1.5s; }
+.wildlife-card:nth-child(5) .wildlife-icon { animation-delay: 2s; }
+.wildlife-card:nth-child(6) .wildlife-icon { animation-delay: 2.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.wildlife-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.wildlife-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 250px;
+    text-align: left;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    margin-bottom: 10px;
+}
+
+.wildlife-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.wildlife-card.spotted {
+    background: rgba(82, 183, 136, 0.3);
+    border: 2px solid #52B788;
+}
+
+.wildlife-progress {
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.wildlife-icon-display {
+    font-size: 2.5rem;
+}
+
+.wildlife-spotted {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FFB347;
+}
+
+/* ===================================
+   ADVENTURE DIFFICULTY SECTION
+   =================================== */
+.difficulty-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #F5F9F0 0%, #FFFFFF 100%);
+}
+
+.difficulty-meters {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.difficulty-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.5s ease;
+}
+
+.difficulty-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.difficulty-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.difficulty-icon {
+    font-size: 2.5rem;
+}
+
+.difficulty-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2D5016;
+}
+
+.meter-container {
+    width: 100%;
+    height: 30px;
+    background: #E0E0E0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #52B788 0%, #FFB347 50%, #FF6B35 100%);
+    border-radius: 15px;
+    transition: width 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.meter-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.difficulty-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ===================================
+   QUIZ SECTION
+   =================================== */
+.attractions-quiz-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5E6 100%);
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.quiz-question {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    color: #2D5016;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.quiz-option {
+    padding: 1rem;
+    background: #F5F9F0;
+    border: 2px solid #52B788;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    background: #52B788;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(82, 183, 136, 0.3);
+}
+
+.quiz-option.correct {
+    background: #52B788;
+    color: white;
+    border-color: #52B788;
+}
+
+.quiz-option.wrong {
+    background: #FF6B6B;
+    color: white;
+    border-color: #FF6B6B;
+    animation: shake 0.5s;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.quiz-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: none;
+}
+
+.quiz-feedback.show {
+    display: block;
+}
+
+.quiz-feedback.correct {
+    background: #E8F5E9;
+    color: #2D5016;
+    border-left: 4px solid #52B788;
+}
+
+.quiz-feedback.wrong {
+    background: #FFEBEE;
+    color: #C62828;
+    border-left: 4px solid #FF6B6B;
+}
+
+.quiz-score {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2D5016;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.score-label {
+    color: #666;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.score-value {
+    color: #52B788;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    .attractions-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .attractions-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .attraction-cards-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .wildlife-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .attraction-card {
+        height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .attractions-hero-title {
+        font-size: 2rem;
+    }
+
+    .attractions-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .wildlife-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wildlife-tooltip {
+        width: 200px;
+    }
+}

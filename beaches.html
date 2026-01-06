@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Beaches - Discover Venezuela</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/beaches.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌴</span>
+                <span class="logo-text">Venezuela</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beaches.html" class="active">Beaches</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="passport.html">My Passport</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="beach-hero">
+        <!-- Animated Wave Overlay -->
+        <div class="waves-overlay">
+            <div class="wave-layer wave-layer-1"></div>
+            <div class="wave-layer wave-layer-2"></div>
+            <div class="wave-layer wave-layer-3"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="beach-floating">
+            <div class="sand-particle sand-1"></div>
+            <div class="sand-particle sand-2"></div>
+            <div class="sand-particle sand-3"></div>
+            <div class="sand-particle sand-4"></div>
+            <div class="sand-particle sand-5"></div>
+            <div class="sand-particle sand-6"></div>
+            <div class="seagull seagull-1">🦅</div>
+            <div class="seagull seagull-2">🕊️</div>
+            <div class="seagull seagull-3">🦅</div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="beach-hero-content">
+            <h1 class="beach-hero-title">Paradise Beaches of Venezuela</h1>
+            <p class="beach-hero-subtitle">
+                Where crystal-clear Caribbean waters meet pristine white sands<br>
+                Discover untouched paradise in the heart of the tropics
+            </p>
+            <div class="scroll-indicator">
+                <span>Explore Below</span>
+                <span class="scroll-arrow">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beach Destination Cards Section -->
+    <section class="beach-destinations">
+        <div class="section-header">
+            <h2 class="section-title">Discover Paradise</h2>
+            <p class="section-subtitle">Click each destination to explore and earn points!</p>
+        </div>
+
+        <div class="beach-cards-container">
+            <!-- Los Roques Card -->
+            <div class="beach-card" data-beach="los-roques">
+                <div class="card-inner">
+                    <!-- Front of Card -->
+                    <div class="card-front">
+                        <div class="beach-css-art los-roques-art">
+                            <div class="sky-gradient"></div>
+                            <div class="ocean-gradient"></div>
+                            <div class="island island-1"></div>
+                            <div class="island island-2"></div>
+                            <div class="island island-3"></div>
+                            <div class="coral coral-1"></div>
+                            <div class="coral coral-2"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="beach-name">Los Roques Archipelago</h3>
+                            <p class="beach-tagline">Remote Caribbean Paradise</p>
+                            <span class="best-time-badge">Best: Dec - May</span>
+                        </div>
+                        <div class="flip-hint">Click to explore →</div>
+                    </div>
+
+                    <!-- Back of Card -->
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3 class="beach-name">Los Roques Archipelago</h3>
+                            <p class="beach-description">
+                                A stunning archipelago of 350+ islands and cays featuring
+                                pristine coral reefs, crystal-clear turquoise waters, and
+                                some of the most beautiful beaches in the Caribbean.
+                            </p>
+                            <div class="activities">
+                                <h4>Activities:</h4>
+                                <ul>
+                                    <li>🤿 World-class snorkeling</li>
+                                    <li>🪁 Kitesurfing adventures</li>
+                                    <li>🚤 Island hopping tours</li>
+                                    <li>🐠 Marine life spotting</li>
+                                </ul>
+                            </div>
+                            <button class="explore-beach-btn" data-beach-id="los-roques">
+                                <span>Explore & Earn Points</span>
+                                <span class="checkmark">✓</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Morrocoy Card -->
+            <div class="beach-card" data-beach="morrocoy">
+                <div class="card-inner">
+                    <!-- Front of Card -->
+                    <div class="card-front">
+                        <div class="beach-css-art morrocoy-art">
+                            <div class="sky-gradient"></div>
+                            <div class="water-gradient"></div>
+                            <div class="mangrove mangrove-1"></div>
+                            <div class="mangrove mangrove-2"></div>
+                            <div class="mangrove mangrove-3"></div>
+                            <div class="cayo cayo-1"></div>
+                            <div class="cayo cayo-2"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="beach-name">Morrocoy National Park</h3>
+                            <p class="beach-tagline">Coastal Paradise</p>
+                            <span class="best-time-badge">Best: Year Round</span>
+                        </div>
+                        <div class="flip-hint">Click to explore →</div>
+                    </div>
+
+                    <!-- Back of Card -->
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3 class="beach-name">Morrocoy National Park</h3>
+                            <p class="beach-description">
+                                A coastal paradise featuring mangrove forests, serene cayos,
+                                and stunning turquoise waters. Perfect for eco-tourism and
+                                peaceful beach experiences.
+                            </p>
+                            <div class="activities">
+                                <h4>Activities:</h4>
+                                <ul>
+                                    <li>🛶 Kayaking through mangroves</li>
+                                    <li>🚤 Boat tours to cayos</li>
+                                    <li>🦜 Wildlife watching</li>
+                                    <li>🏊 Swimming in calm waters</li>
+                                </ul>
+                            </div>
+                            <button class="explore-beach-btn" data-beach-id="morrocoy">
+                                <span>Explore & Earn Points</span>
+                                <span class="checkmark">✓</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margarita Island Card -->
+            <div class="beach-card" data-beach="margarita">
+                <div class="card-inner">
+                    <!-- Front of Card -->
+                    <div class="card-front">
+                        <div class="beach-css-art margarita-art">
+                            <div class="sky-gradient"></div>
+                            <div class="ocean-blue"></div>
+                            <div class="island-large"></div>
+                            <div class="beach-strip"></div>
+                            <div class="palm palm-1"></div>
+                            <div class="palm palm-2"></div>
+                            <div class="boat"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="beach-name">Margarita Island</h3>
+                            <p class="beach-tagline">Pearl of the Caribbean</p>
+                            <span class="best-time-badge">Best: Nov - Apr</span>
+                        </div>
+                        <div class="flip-hint">Click to explore →</div>
+                    </div>
+
+                    <!-- Back of Card -->
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3 class="beach-name">Margarita Island</h3>
+                            <p class="beach-description">
+                                Known as the Pearl of the Caribbean, this vibrant island
+                                offers beautiful beaches, duty-free shopping, exciting
+                                nightlife, and perfect conditions for water sports.
+                            </p>
+                            <div class="activities">
+                                <h4>Activities:</h4>
+                                <ul>
+                                    <li>🏄 Windsurfing & kitesurfing</li>
+                                    <li>🛍️ Duty-free shopping</li>
+                                    <li>🏖️ Beach hopping tours</li>
+                                    <li>🌅 Sunset cruises</li>
+                                </ul>
+                            </div>
+                            <button class="explore-beach-btn" data-beach-id="margarita">
+                                <span>Explore & Earn Points</span>
+                                <span class="checkmark">✓</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beach Checklist Section -->
+    <section class="beach-checklist-section">
+        <div class="section-header">
+            <h2 class="section-title">Your Beach Explorer Progress</h2>
+            <p class="section-subtitle">Track your journey to becoming a Beach Explorer!</p>
+        </div>
+
+        <div class="checklist-container">
+            <div class="checklist-items">
+                <div class="checklist-item" data-beach="los-roques">
+                    <span class="check-icon">☐</span>
+                    <span class="beach-label">Los Roques Archipelago</span>
+                </div>
+                <div class="checklist-item" data-beach="morrocoy">
+                    <span class="check-icon">☐</span>
+                    <span class="beach-label">Morrocoy National Park</span>
+                </div>
+                <div class="checklist-item" data-beach="margarita">
+                    <span class="check-icon">☐</span>
+                    <span class="beach-label">Margarita Island</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-label">Beach Explorer Badge</span>
+                    <span class="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <p class="progress-message">Explore all beaches to unlock the Beach Explorer badge! 🌊</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beach Quiz Section -->
+    <section class="beach-quiz-section">
+        <div class="section-header">
+            <h2 class="section-title">Test Your Beach Knowledge!</h2>
+            <p class="section-subtitle">Answer correctly to earn 50 points per question</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question" data-question="1">
+                <h3 class="question-text">How many islands make up the Los Roques Archipelago?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">Around 50 islands</button>
+                    <button class="quiz-option" data-correct="false">About 150 islands</button>
+                    <button class="quiz-option" data-correct="true">Over 350 islands</button>
+                    <button class="quiz-option" data-correct="false">More than 500 islands</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" data-question="2">
+                <h3 class="question-text">What is Margarita Island also known as?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">Diamond of Venezuela</button>
+                    <button class="quiz-option" data-correct="true">Pearl of the Caribbean</button>
+                    <button class="quiz-option" data-correct="false">Emerald Island</button>
+                    <button class="quiz-option" data-correct="false">Sapphire Coast</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" data-question="3">
+                <h3 class="question-text">What unique ecosystem can you find in Morrocoy National Park?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">Volcanic hot springs</button>
+                    <button class="quiz-option" data-correct="true">Mangrove forests</button>
+                    <button class="quiz-option" data-correct="false">Desert dunes</button>
+                    <button class="quiz-option" data-correct="false">Mountain glaciers</button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+        </div>
+
+        <div class="quiz-score">
+            <span class="score-label">Score:</span>
+            <span class="score-value">0</span>
+            <span class="score-total">/ 3</span>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Teaser -->
+    <section class="photo-gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">Beach Memories</h2>
+            <p class="section-subtitle">Click photos to earn photographer progress!</p>
+        </div>
+
+        <div class="gallery-carousel">
+            <div class="gallery-track">
+                <div class="gallery-photo photo-1" data-photo="1"></div>
+                <div class="gallery-photo photo-2" data-photo="2"></div>
+                <div class="gallery-photo photo-3" data-photo="3"></div>
+                <div class="gallery-photo photo-4" data-photo="4"></div>
+                <div class="gallery-photo photo-5" data-photo="5"></div>
+                <div class="gallery-photo photo-6" data-photo="6"></div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="gallery-photo photo-1" data-photo="1"></div>
+                <div class="gallery-photo photo-2" data-photo="2"></div>
+                <div class="gallery-photo photo-3" data-photo="3"></div>
+                <div class="gallery-photo photo-4" data-photo="4"></div>
+                <div class="gallery-photo photo-5" data-photo="5"></div>
+                <div class="gallery-photo photo-6" data-photo="6"></div>
+            </div>
+        </div>
+
+        <div class="photographer-progress">
+            <span class="photo-icon">📸</span>
+            <span class="photos-viewed">0</span>
+            <span class="photos-label">photos viewed</span>
+        </div>
+    </section>
+
+    <!-- Floating Beach Balls -->
+    <div class="beach-balls">
+        <div class="beach-ball ball-1">🏐</div>
+        <div class="beach-ball ball-2">🏖️</div>
+        <div class="beach-ball ball-3">🏐</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>🗺️ Explore</h3>
+                <ul class="footer-quick-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="beaches.html">Beaches</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="map.html">Interactive Map</a></li>
+                    <li><a href="passport.html">My Passport</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="footer-section">
+                <h3>🌐 Connect</h3>
+                <p style="color: var(--light-gray); margin-bottom: 1rem;">Follow the journey</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Website">🌐</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="#" class="social-icon" title="Twitter">🐦</a>
+                </div>
+            </div>
+
+            <!-- Gamification Widget Section -->
+            <div class="footer-section">
+                <h3>🎮 Your Progress</h3>
+                <div class="footer-gamification-widget">
+                    <div class="footer-stats">
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Points:</span>
+                            <span class="footer-stat-value" id="footer-points">0</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Level:</span>
+                            <span class="footer-stat-value" id="footer-level">Explorer</span>
+                        </div>
+                        <div class="footer-stat-item">
+                            <span class="footer-stat-label">Badges:</span>
+                            <span class="footer-stat-value" id="footer-badges">0/12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Discover Venezuela. Your adventure begins here.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Your Adventure...</div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Confetti Canvas (for quiz) -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="js/notifications.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/universal.js"></script>
+    <script src="js/beaches.js"></script>
+</body>
+</html>
