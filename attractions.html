@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/attractions.css">
 </head>
+
 <body>
     <!-- Navigation Header -->
     <header class="main-header">
@@ -15,7 +17,12 @@
                 <span class="logo-icon">🌴</span>
                 <span class="logo-text">Venezuela</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="beaches.html">Beaches</a></li>
                 <li><a href="attractions.html" class="active">Attractions</a></li>
@@ -74,15 +81,7 @@
             <div class="attraction-card" data-attraction="angel-falls">
                 <div class="card-inner-attraction">
                     <!-- CSS Art Front -->
-                    <div class="attraction-art angel-falls-art">
-                        <div class="sky-bg"></div>
-                        <div class="cliff-wall"></div>
-                        <div class="cliff-top"></div>
-                        <div class="waterfall-stream"></div>
-                        <div class="waterfall-stream-2"></div>
-                        <div class="mist-bottom"></div>
-                        <div class="jungle-base"></div>
-                    </div>
+                    <img src="images/angel-falls.png" alt="Angel Falls" class="attraction-img">
 
                     <div class="attraction-info">
                         <h3 class="attraction-name">Angel Falls</h3>
@@ -96,15 +95,7 @@
             <div class="attraction-card" data-attraction="mount-roraima">
                 <div class="card-inner-attraction">
                     <!-- CSS Art Front -->
-                    <div class="attraction-art roraima-art">
-                        <div class="sky-bg"></div>
-                        <div class="cloud-layer cloud-1"></div>
-                        <div class="cloud-layer cloud-2"></div>
-                        <div class="tepui-base"></div>
-                        <div class="tepui-cliff"></div>
-                        <div class="tepui-top"></div>
-                        <div class="jungle-floor"></div>
-                    </div>
+                    <img src="images/mount-roraima.png" alt="Mount Roraima" class="attraction-img">
 
                     <div class="attraction-info">
                         <h3 class="attraction-name">Mount Roraima</h3>
@@ -118,15 +109,7 @@
             <div class="attraction-card" data-attraction="canaima">
                 <div class="card-inner-attraction">
                     <!-- CSS Art Front -->
-                    <div class="attraction-art canaima-art">
-                        <div class="sky-bg"></div>
-                        <div class="lagoon-water"></div>
-                        <div class="tepui-distant tepui-d1"></div>
-                        <div class="tepui-distant tepui-d2"></div>
-                        <div class="tepui-distant tepui-d3"></div>
-                        <div class="jungle-edge"></div>
-                        <div class="lagoon-shore"></div>
-                    </div>
+                    <img src="images/canaima-national-park.png" alt="Canaima National Park" class="attraction-img">
 
                     <div class="attraction-info">
                         <h3 class="attraction-name">Canaima National Park</h3>
@@ -279,7 +262,8 @@
         <div class="quiz-container">
             <!-- Question 1 -->
             <div class="quiz-question" data-question="1">
-                <h3 class="question-text">What is the height of Angel Falls, the world's highest uninterrupted waterfall?</h3>
+                <h3 class="question-text">What is the height of Angel Falls, the world's highest uninterrupted
+                    waterfall?</h3>
                 <div class="quiz-options">
                     <button class="quiz-option" data-correct="false">807 meters</button>
                     <button class="quiz-option" data-correct="true">979 meters</button>
@@ -303,7 +287,8 @@
 
             <!-- Question 3 -->
             <div class="quiz-question" data-question="3">
-                <h3 class="question-text">What percentage of Canaima National Park is covered by table-top mountains (tepuis)?</h3>
+                <h3 class="question-text">What percentage of Canaima National Park is covered by table-top mountains
+                    (tepuis)?</h3>
                 <div class="quiz-options">
                     <button class="quiz-option" data-correct="false">About 25%</button>
                     <button class="quiz-option" data-correct="false">Nearly 80%</button>
@@ -394,4 +379,5 @@
     <script src="js/universal.js"></script>
     <script src="js/attractions.js"></script>
 </body>
+
 </html>

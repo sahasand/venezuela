@@ -18,6 +18,7 @@ class VenezuelaGamificationSystem {
                 id: 'first_steps',
                 name: 'First Steps',
                 icon: '👣',
+                image: 'images/badges/badge_first_steps.png',
                 description: 'Visit your first destination',
                 condition: (progress) => progress.placesVisited.length >= 1
             },
@@ -25,6 +26,7 @@ class VenezuelaGamificationSystem {
                 id: 'beach_explorer',
                 name: 'Beach Explorer',
                 icon: '🌊',
+                image: 'images/badges/badge_beach_explorer.png',
                 description: 'Visit all beach pages',
                 condition: (progress) => {
                     const beachPages = ['beaches', 'los-roques', 'morrocoy', 'coche'];
@@ -35,16 +37,18 @@ class VenezuelaGamificationSystem {
                 id: 'mountain_climber',
                 name: 'Mountain Climber',
                 icon: '🏔️',
+                image: 'images/badges/badge_mountain_climber.png',
                 description: 'Visit Angel Falls and Roraima pages',
                 condition: (progress) => {
                     return progress.placesVisited.includes('angel-falls') &&
-                           progress.placesVisited.includes('roraima');
+                        progress.placesVisited.includes('roraima');
                 }
             },
             wildlife_spotter: {
                 id: 'wildlife_spotter',
                 name: 'Wildlife Spotter',
                 icon: '🦜',
+                image: 'images/badges/badge_wildlife_spotter.png',
                 description: 'Discover 5 animals/wildlife mentions',
                 condition: (progress) => progress.wildlifeSpotted >= 5
             },
@@ -52,6 +56,7 @@ class VenezuelaGamificationSystem {
                 id: 'photographer',
                 name: 'Photographer',
                 icon: '📸',
+                image: 'images/badges/badge_photographer.png',
                 description: 'View 10 destination images',
                 condition: (progress) => progress.imagesViewed >= 10
             },
@@ -59,6 +64,7 @@ class VenezuelaGamificationSystem {
                 id: 'history_buff',
                 name: 'History Buff',
                 icon: '📚',
+                image: 'images/badges/badge_history_buff.png',
                 description: 'Read about Venezuelan culture',
                 condition: (progress) => progress.cultureRead === true
             },
@@ -66,6 +72,7 @@ class VenezuelaGamificationSystem {
                 id: 'adventure_seeker',
                 name: 'Adventure Seeker',
                 icon: '🗺️',
+                image: 'images/badges/badge_adventure_seeker.png',
                 description: 'Explore 8+ destinations',
                 condition: (progress) => progress.placesVisited.length >= 8
             },
@@ -73,6 +80,7 @@ class VenezuelaGamificationSystem {
                 id: 'night_owl',
                 name: 'Night Owl',
                 icon: '🦉',
+                image: 'images/badges/badge_night_owl.png',
                 description: 'Visit site after 8 PM',
                 condition: (progress) => progress.nightVisits >= 1
             },
@@ -80,6 +88,7 @@ class VenezuelaGamificationSystem {
                 id: 'early_bird',
                 name: 'Early Bird',
                 icon: '🐦',
+                image: 'images/badges/badge_early_bird.png',
                 description: 'Visit site before 8 AM',
                 condition: (progress) => progress.earlyVisits >= 1
             },
@@ -87,6 +96,7 @@ class VenezuelaGamificationSystem {
                 id: 'map_master',
                 name: 'Map Master',
                 icon: '🧭',
+                image: 'images/badges/badge_map_master.png',
                 description: 'Use the interactive map',
                 condition: (progress) => progress.mapUsed === true
             },
@@ -94,6 +104,7 @@ class VenezuelaGamificationSystem {
                 id: 'passport_pro',
                 name: 'Passport Pro',
                 icon: '🛂',
+                image: 'images/badges/badge_passport_pro.png',
                 description: 'Fill 50% of passport',
                 condition: (progress) => {
                     const totalDestinations = 15; // Adjust based on actual destinations
@@ -104,6 +115,7 @@ class VenezuelaGamificationSystem {
                 id: 'completionist',
                 name: 'Completionist',
                 icon: '👑',
+                image: 'images/badges/badge_completionist.png',
                 description: 'Earn all other badges',
                 condition: (progress) => {
                     const otherBadges = Object.keys(this.badges).filter(id => id !== 'completionist');
@@ -150,7 +162,7 @@ class VenezuelaGamificationSystem {
      */
     init() {
         console.log('%c🎮 Venezuela Gamification System Initializing...',
-                    'color: #52B788; font-size: 16px; font-weight: bold;');
+            'color: #52B788; font-size: 16px; font-weight: bold;');
 
         this.loadProgress();
         this.trackTimeOfDay();
@@ -160,7 +172,7 @@ class VenezuelaGamificationSystem {
         this.updateDisplay();
 
         console.log('%c✅ Gamification System Ready!',
-                    'color: #95D5B2; font-size: 14px;');
+            'color: #95D5B2; font-size: 14px;');
     }
 
     /**
@@ -547,8 +559,17 @@ class VenezuelaGamificationSystem {
             const isUnlocked = progress.badgesList.some(b => b.id === badge.id);
             const badgeElement = document.createElement('div');
             badgeElement.className = `badge-item ${isUnlocked ? 'unlocked' : 'locked'}`;
+
+            // Check if badge has an image image
+            let iconContent;
+            if (badge.image) {
+                iconContent = `<img src="${badge.image}" alt="${badge.name}" class="badge-img" data-emoji="${badge.icon}" onerror="this.outerHTML='<div class=badge-icon>'+this.dataset.emoji+'</div>'">`;
+            } else {
+                iconContent = `<div class="badge-icon">${badge.icon}</div>`;
+            }
+
             badgeElement.innerHTML = `
-                <div class="badge-icon">${badge.icon}</div>
+                ${iconContent}
                 <div class="badge-name">${badge.name}</div>
             `;
             container.appendChild(badgeElement);

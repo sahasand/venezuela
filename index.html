@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Venezuela - Your Adventure Awaits</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Navigation Header -->
     <header class="main-header">
@@ -14,7 +16,12 @@
                 <span class="logo-icon">🌴</span>
                 <span class="logo-text">Venezuela</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="beaches.html">Beaches</a></li>
                 <li><a href="attractions.html">Attractions</a></li>
@@ -40,14 +47,6 @@
             <div class="particle"></div>
         </div>
 
-        <!-- Floating Elements -->
-        <div class="floating-elements">
-            <div class="bird bird-1">🦜</div>
-            <div class="bird bird-2">🦅</div>
-            <div class="cloud cloud-1">☁️</div>
-            <div class="cloud cloud-2">☁️</div>
-            <div class="cloud cloud-3">☁️</div>
-        </div>
 
         <!-- Hero Content -->
         <div class="hero-content">
@@ -266,4 +265,5 @@
     <script src="js/universal.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

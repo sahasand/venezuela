@@ -15,42 +15,42 @@ class VenezuelaInteractiveMap {
         this.regionData = {
             'caribbean-coast': {
                 name: 'Caribbean Coast',
-                icon: '🏖️',
+                image: 'images/region-caribbean.png',
                 description: 'Experience pristine beaches, crystal-clear waters, and vibrant coral reefs along Venezuela\'s stunning Caribbean coastline.',
                 attractions: ['Los Roques Archipelago', 'Morrocoy National Park', 'Coche Island', 'Tucacas Bay'],
                 link: 'beaches.html'
             },
             'margarita-island': {
                 name: 'Margarita Island',
-                icon: '🏝️',
+                image: 'images/margarita-island.png',
                 description: 'Discover the Pearl of the Caribbean with its beautiful beaches, duty-free shopping, and vibrant nightlife.',
                 attractions: ['Playa El Agua', 'La Restinga Lagoon', 'Pampatar Castle', 'Macanao Peninsula'],
                 link: 'beaches.html'
             },
             'andes-region': {
                 name: 'Andes Mountains',
-                icon: '⛰️',
+                image: 'images/region-andes.png',
                 description: 'Explore majestic mountain peaks, charming colonial towns, and unique cloud forests in the Venezuelan Andes.',
                 attractions: ['Mérida City', 'Pico Bolívar', 'Cable Car System', 'Sierra Nevada National Park'],
                 link: 'attractions.html'
             },
             'los-llanos': {
                 name: 'Los Llanos',
-                icon: '🦌',
+                image: 'images/region-los-llanos.png',
                 description: 'Witness incredible wildlife in vast tropical plains where capybaras, anacondas, and caimans roam free.',
                 attractions: ['Hato El Cedral', 'Wildlife Safaris', 'Apure River', 'Cattle Ranches'],
                 link: 'attractions.html'
             },
             'orinoco-delta': {
                 name: 'Orinoco Delta',
-                icon: '🚣',
+                image: 'images/region-orinoco.png',
                 description: 'Navigate through labyrinthine waterways and experience indigenous Warao culture in this unique ecosystem.',
                 attractions: ['Warao Villages', 'River Cruises', 'Mangrove Forests', 'Exotic Wildlife'],
                 link: 'attractions.html'
             },
             'canaima-gran-sabana': {
                 name: 'Canaima & Gran Sabana',
-                icon: '💧',
+                image: 'images/canaima-national-park.png',
                 description: 'Marvel at Angel Falls, the world\'s highest waterfall, and explore ancient tepuis in this UNESCO World Heritage site.',
                 attractions: ['Angel Falls', 'Mount Roraima', 'Canaima National Park', 'Kavac Canyon'],
                 link: 'attractions.html'
@@ -83,7 +83,7 @@ class VenezuelaInteractiveMap {
             closeButton: document.getElementById('closeInfoCard'),
             regionsExplored: document.getElementById('regionsExplored'),
             progressBar: document.getElementById('mapProgressBar'),
-            infoCardIcon: document.getElementById('infoCardIcon'),
+            infoCardImage: document.getElementById('infoCardImage'),
             infoCardTitle: document.getElementById('infoCardTitle'),
             infoCardDescription: document.getElementById('infoCardDescription'),
             infoCardAttractionsList: document.getElementById('infoCardAttractionsList'),
@@ -254,7 +254,8 @@ class VenezuelaInteractiveMap {
         this.currentInfoCard = regionId;
 
         // Update content
-        this.elements.infoCardIcon.textContent = data.icon;
+        this.elements.infoCardImage.src = data.image;
+        this.elements.infoCardImage.alt = data.name;
         this.elements.infoCardTitle.textContent = data.name;
         this.elements.infoCardDescription.textContent = data.description;
 

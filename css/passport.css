@@ -65,8 +65,15 @@
 }
 
 @keyframes book-float {
-    0%, 100% { transform: translateY(0) rotateY(-5deg); }
-    50% { transform: translateY(-20px) rotateY(5deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotateY(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateY(5deg);
+    }
 }
 
 .passport-seal {
@@ -86,8 +93,15 @@
 }
 
 @keyframes seal-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .passport-title {
@@ -122,8 +136,15 @@
 }
 
 @keyframes level-glow {
-    0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
-    50% { box-shadow: 0 10px 40px rgba(214, 158, 46, 0.5); }
+
+    0%,
+    100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgba(214, 158, 46, 0.5);
+    }
 }
 
 .level-icon {
@@ -132,8 +153,13 @@
 }
 
 @keyframes icon-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Travel Pattern Background */
@@ -145,7 +171,7 @@
     bottom: 0;
     opacity: 0.05;
     background-image:
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, .1) 35px, rgba(255, 255, 255, .1) 70px);
     pointer-events: none;
 }
 
@@ -198,8 +224,15 @@
 }
 
 @keyframes stat-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .stat-value {
@@ -298,9 +331,19 @@
 }
 
 @keyframes badge-unlock {
-    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-    50% { transform: scale(1.2) rotate(10deg); }
-    100% { transform: scale(1) rotate(0); opacity: 1; }
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
 }
 
 .badge-card.unlocked::before {
@@ -316,14 +359,37 @@
 }
 
 @keyframes glow-pulse {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .badge-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
     display: block;
+    line-height: 1;
+}
+
+.badge-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+.badge-card:hover .badge-img {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .badge-name {
@@ -369,8 +435,13 @@
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* ===================================
@@ -407,9 +478,19 @@
 }
 
 @keyframes stamp-press {
-    0% { transform: scale(1.5) rotate(15deg); opacity: 0; }
-    50% { transform: scale(0.9) rotate(-5deg); }
-    100% { transform: scale(1) rotate(0); opacity: 1; }
+    0% {
+        transform: scale(1.5) rotate(15deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(0.9) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
 }
 
 .stamp-card.visited::before {
@@ -509,8 +590,15 @@
 }
 
 @keyframes slide-in-right {
-    from { transform: translateX(-50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .timeline-item::before {
@@ -618,8 +706,13 @@
 }
 
 @keyframes progress-shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .level-milestones {

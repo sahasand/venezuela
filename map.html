@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/map.css">
 </head>
+
 <body>
     <!-- Navigation Header -->
     <header class="main-header">
@@ -15,7 +17,12 @@
                 <span class="logo-icon">🌴</span>
                 <span class="logo-text">Venezuela</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="beaches.html">Beaches</a></li>
                 <li><a href="attractions.html">Attractions</a></li>
@@ -51,20 +58,16 @@
 
                     <!-- Wave pattern for ocean -->
                     <pattern id="wavePattern" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M0,10 Q25,5 50,10 T100,10" stroke="rgba(255,255,255,0.2)" fill="none" stroke-width="2"/>
+                        <path d="M0,10 Q25,5 50,10 T100,10" stroke="rgba(255,255,255,0.2)" fill="none"
+                            stroke-width="2" />
                     </pattern>
                 </defs>
 
                 <!-- Ocean -->
-                <rect width="1000" height="600" fill="url(#oceanGradient)"/>
+                <rect width="1000" height="600" fill="url(#oceanGradient)" />
                 <rect width="1000" height="600" fill="url(#wavePattern)" opacity="0.3">
-                    <animateTransform
-                        attributeName="transform"
-                        type="translate"
-                        from="0 0"
-                        to="100 0"
-                        dur="10s"
-                        repeatCount="indefinite"/>
+                    <animateTransform attributeName="transform" type="translate" from="0 0" to="100 0" dur="10s"
+                        repeatCount="indefinite" />
                 </rect>
 
                 <!-- Caribbean Sea Label -->
@@ -73,132 +76,90 @@
                 <!-- Country Borders (faint) -->
                 <g class="borders">
                     <!-- Colombia border (west) -->
-                    <line x1="150" y1="250" x2="200" y2="500" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                    <line x1="150" y1="250" x2="200" y2="500" stroke="rgba(255,255,255,0.3)" stroke-width="2"
+                        stroke-dasharray="5,5" />
                     <!-- Brazil border (south) -->
-                    <line x1="200" y1="500" x2="700" y2="550" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                    <line x1="200" y1="500" x2="700" y2="550" stroke="rgba(255,255,255,0.3)" stroke-width="2"
+                        stroke-dasharray="5,5" />
                     <!-- Guyana border (east) -->
-                    <line x1="700" y1="550" x2="750" y2="300" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                    <line x1="700" y1="550" x2="750" y2="300" stroke="rgba(255,255,255,0.3)" stroke-width="2"
+                        stroke-dasharray="5,5" />
                 </g>
 
                 <!-- Venezuela Regions -->
                 <g class="regions">
                     <!-- Caribbean Coast Region -->
-                    <polygon
-                        id="caribbean-coast"
-                        class="region"
-                        data-region="caribbean-coast"
-                        data-name="Caribbean Coast"
-                        points="250,150 450,120 550,180 520,220 350,240 280,200"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <polygon id="caribbean-coast" class="region" data-region="caribbean-coast"
+                        data-name="Caribbean Coast" points="250,150 450,120 550,180 520,220 350,240 280,200"
+                        fill="#52B788" stroke="#2D5016" stroke-width="2" />
 
                     <!-- Margarita Island -->
-                    <ellipse
-                        id="margarita-island"
-                        class="region"
-                        data-region="margarita-island"
-                        data-name="Margarita Island"
-                        cx="650"
-                        cy="150"
-                        rx="60"
-                        ry="40"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <ellipse id="margarita-island" class="region" data-region="margarita-island"
+                        data-name="Margarita Island" cx="650" cy="150" rx="60" ry="40" fill="#52B788" stroke="#2D5016"
+                        stroke-width="2" />
 
                     <!-- Andes Region (western mountains) -->
-                    <polygon
-                        id="andes-region"
-                        class="region"
-                        data-region="andes-region"
-                        data-name="Andes Mountains"
-                        points="150,250 200,200 280,200 300,280 250,350 180,320"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <polygon id="andes-region" class="region" data-region="andes-region" data-name="Andes Mountains"
+                        points="150,250 200,200 280,200 300,280 250,350 180,320" fill="#52B788" stroke="#2D5016"
+                        stroke-width="2" />
 
                     <!-- Los Llanos (central plains) -->
-                    <polygon
-                        id="los-llanos"
-                        class="region"
-                        data-region="los-llanos"
-                        data-name="Los Llanos"
-                        points="300,280 350,240 520,220 580,280 550,380 400,400 320,360"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <polygon id="los-llanos" class="region" data-region="los-llanos" data-name="Los Llanos"
+                        points="300,280 350,240 520,220 580,280 550,380 400,400 320,360" fill="#52B788" stroke="#2D5016"
+                        stroke-width="2" />
 
                     <!-- Orinoco Delta (eastern) -->
-                    <polygon
-                        id="orinoco-delta"
-                        class="region"
-                        data-region="orinoco-delta"
-                        data-name="Orinoco Delta"
-                        points="580,280 750,300 720,420 650,450 550,380"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <polygon id="orinoco-delta" class="region" data-region="orinoco-delta" data-name="Orinoco Delta"
+                        points="580,280 750,300 720,420 650,450 550,380" fill="#52B788" stroke="#2D5016"
+                        stroke-width="2" />
 
                     <!-- Canaima/Gran Sabana (southeastern) -->
-                    <polygon
-                        id="canaima-gran-sabana"
-                        class="region"
-                        data-region="canaima-gran-sabana"
-                        data-name="Canaima & Gran Sabana"
-                        points="400,400 550,380 650,450 700,550 500,520 350,480"
-                        fill="#52B788"
-                        stroke="#2D5016"
-                        stroke-width="2"
-                    />
+                    <polygon id="canaima-gran-sabana" class="region" data-region="canaima-gran-sabana"
+                        data-name="Canaima & Gran Sabana" points="400,400 550,380 650,450 700,550 500,520 350,480"
+                        fill="#52B788" stroke="#2D5016" stroke-width="2" />
                 </g>
 
                 <!-- Location Markers -->
                 <g class="markers">
                     <!-- Los Roques -->
                     <g class="marker" data-location="Los Roques">
-                        <circle cx="350" cy="180" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="350" cy="180" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="350" cy="180" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="350" cy="180" r="8" class="marker-core" fill="#FFB347" />
                         <text x="350" y="165" class="marker-label">Los Roques</text>
                     </g>
 
                     <!-- Morrocoy -->
                     <g class="marker" data-location="Morrocoy">
-                        <circle cx="280" cy="190" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="280" cy="190" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="280" cy="190" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="280" cy="190" r="8" class="marker-core" fill="#FFB347" />
                         <text x="280" y="175" class="marker-label">Morrocoy</text>
                     </g>
 
                     <!-- Margarita Island -->
                     <g class="marker" data-location="Margarita">
-                        <circle cx="650" cy="150" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="650" cy="150" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="650" cy="150" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="650" cy="150" r="8" class="marker-core" fill="#FFB347" />
                         <text x="650" y="135" class="marker-label">Margarita</text>
                     </g>
 
                     <!-- Angel Falls -->
                     <g class="marker" data-location="Angel Falls">
-                        <circle cx="520" cy="420" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="520" cy="420" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="520" cy="420" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="520" cy="420" r="8" class="marker-core" fill="#FFB347" />
                         <text x="520" y="405" class="marker-label">Angel Falls</text>
                     </g>
 
                     <!-- Mount Roraima -->
                     <g class="marker" data-location="Roraima">
-                        <circle cx="600" cy="500" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="600" cy="500" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="600" cy="500" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="600" cy="500" r="8" class="marker-core" fill="#FFB347" />
                         <text x="600" y="485" class="marker-label">Roraima</text>
                     </g>
 
                     <!-- Canaima -->
                     <g class="marker" data-location="Canaima">
-                        <circle cx="450" cy="460" r="8" class="marker-pulse" fill="#FF6B35"/>
-                        <circle cx="450" cy="460" r="8" class="marker-core" fill="#FFB347"/>
+                        <circle cx="450" cy="460" r="8" class="marker-pulse" fill="#FF6B35" />
+                        <circle cx="450" cy="460" r="8" class="marker-core" fill="#FFB347" />
                         <text x="450" y="445" class="marker-label">Canaima</text>
                     </g>
                 </g>
@@ -212,7 +173,9 @@
         <div class="info-card-panel" id="infoCardPanel">
             <button class="info-card-close" id="closeInfoCard">&times;</button>
             <div class="info-card-content">
-                <div class="info-card-icon" id="infoCardIcon">🏖️</div>
+                <div class="info-card-image-container">
+                    <img src="" alt="" class="info-card-image" id="infoCardImage">
+                </div>
                 <h2 class="info-card-title" id="infoCardTitle">Region Name</h2>
                 <p class="info-card-description" id="infoCardDescription">Region description</p>
                 <div class="info-card-attractions">
@@ -298,4 +261,5 @@
     <script src="js/universal.js"></script>
     <script src="js/map.js"></script>
 </body>
+
 </html>

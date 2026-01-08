@@ -63,8 +63,13 @@
 }
 
 @keyframes wave {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1200px); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1200px);
+    }
 }
 
 /* Floating Elements */
@@ -89,21 +94,46 @@
     animation: float-up 10s linear infinite;
 }
 
-.sand-1 { left: 10%; animation-delay: 0s; }
-.sand-2 { left: 30%; animation-delay: 2s; }
-.sand-3 { left: 50%; animation-delay: 4s; }
-.sand-4 { left: 70%; animation-delay: 6s; }
-.sand-5 { left: 20%; animation-delay: 1s; }
-.sand-6 { left: 85%; animation-delay: 3s; }
+.sand-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sand-2 {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.sand-3 {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.sand-4 {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.sand-5 {
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.sand-6 {
+    left: 85%;
+    animation-delay: 3s;
+}
 
 @keyframes float-up {
     0% {
         bottom: -10px;
         opacity: 0;
     }
+
     50% {
         opacity: 0.6;
     }
+
     100% {
         bottom: 100%;
         opacity: 0;
@@ -140,12 +170,15 @@
         left: -100px;
         transform: scaleX(1);
     }
+
     45% {
         transform: scaleX(1);
     }
+
     50% {
         transform: scaleX(-1);
     }
+
     100% {
         left: calc(100% + 100px);
         transform: scaleX(-1);
@@ -195,6 +228,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -202,8 +236,15 @@
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 /* ===================================
@@ -292,16 +333,16 @@
     transform: translateY(-10px);
 }
 
-.beach-card:hover .beach-css-art {
+.beach-card:hover .beach-img {
     transform: scale(1.05);
 }
 
 /* CSS Art Container */
-.beach-css-art {
+/* CSS Art Container Replaced by Image */
+.beach-img {
     width: 100%;
     height: 250px;
-    position: relative;
-    overflow: hidden;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -357,8 +398,13 @@
     opacity: 0.6;
 }
 
-.los-roques-art .coral-1 { left: 25%; }
-.los-roques-art .coral-2 { left: 70%; }
+.los-roques-art .coral-1 {
+    left: 25%;
+}
+
+.los-roques-art .coral-2 {
+    left: 70%;
+}
 
 /* Morrocoy CSS Art */
 .morrocoy-art .sky-gradient {
@@ -396,9 +442,18 @@
     border-radius: 50%;
 }
 
-.morrocoy-art .mangrove-1 { left: 25%; }
-.morrocoy-art .mangrove-2 { left: 50%; height: 90px; }
-.morrocoy-art .mangrove-3 { left: 75%; }
+.morrocoy-art .mangrove-1 {
+    left: 25%;
+}
+
+.morrocoy-art .mangrove-2 {
+    left: 50%;
+    height: 90px;
+}
+
+.morrocoy-art .mangrove-3 {
+    left: 75%;
+}
 
 .morrocoy-art .cayo {
     position: absolute;
@@ -473,8 +528,13 @@
     font-size: 1.2rem;
 }
 
-.margarita-art .palm-1 { left: 35%; }
-.margarita-art .palm-2 { right: 35%; }
+.margarita-art .palm-1 {
+    left: 35%;
+}
+
+.margarita-art .palm-2 {
+    right: 35%;
+}
 
 .margarita-art .boat {
     position: absolute;
@@ -787,9 +847,19 @@
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
 }
 
 .quiz-feedback {
@@ -869,8 +939,13 @@
 }
 
 @keyframes scroll-gallery {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .gallery-photo {
@@ -880,11 +955,48 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.photo-overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .gallery-photo:hover {
-    transform: scale(1.1) rotate(2deg);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05) rotate(0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.gallery-photo:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-photo:hover .photo-overlay {
+    transform: translateY(0);
 }
 
 .gallery-photo.clicked {
@@ -892,17 +1004,18 @@
 }
 
 @keyframes photo-flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
-/* Gradient "Photos" */
-.photo-1 { background: linear-gradient(135deg, #90E0EF 0%, #00B4D8 100%); }
-.photo-2 { background: linear-gradient(135deg, #F4D35E 0%, #FF6B6B 100%); }
-.photo-3 { background: linear-gradient(135deg, #52B788 0%, #2D5016 100%); }
-.photo-4 { background: linear-gradient(135deg, #FF6B6B 0%, #0077B6 100%); }
-.photo-5 { background: linear-gradient(135deg, #00B4D8 0%, #F4D35E 100%); }
-.photo-6 { background: linear-gradient(135deg, #0077B6 0%, #52B788 100%); }
+/* Gradient classes removed as we now use real images */
 
 .photographer-progress {
     text-align: center;
@@ -961,9 +1074,12 @@
 }
 
 @keyframes float-beach-ball {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-30px) rotate(180deg);
     }

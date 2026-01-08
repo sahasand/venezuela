@@ -65,8 +65,13 @@
 }
 
 @keyframes float-mist {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
 }
 
 /* Mountain Parallax Layers */
@@ -144,15 +149,19 @@
         left: -100px;
         transform: scaleX(1) translateY(0);
     }
+
     25% {
         transform: scaleX(1) translateY(-20px);
     }
+
     50% {
         transform: scaleX(-1) translateY(0);
     }
+
     75% {
         transform: scaleX(-1) translateY(20px);
     }
+
     100% {
         left: calc(100% + 100px);
         transform: scaleX(-1) translateY(0);
@@ -202,6 +211,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -209,8 +219,15 @@
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 /* ===================================
@@ -270,6 +287,7 @@
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -291,15 +309,15 @@
 }
 
 /* CSS Art Container */
-.attraction-art {
+/* CSS Art Container Replaced by Image */
+.attraction-img {
     width: 100%;
     height: 300px;
-    position: relative;
-    overflow: hidden;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.attraction-card:hover .attraction-art {
+.attraction-card:hover .attraction-img {
     transform: scale(1.05);
 }
 
@@ -360,8 +378,15 @@
 }
 
 @keyframes waterfall-flow {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .angel-falls-art .mist-bottom {
@@ -377,8 +402,17 @@
 }
 
 @keyframes mist-pulse {
-    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; }
-    50% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 0.9;
+    }
 }
 
 .angel-falls-art .jungle-base {
@@ -422,8 +456,15 @@
 }
 
 @keyframes float-cloud {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .roraima-art .tepui-base {
@@ -615,6 +656,7 @@
         transform: scale(0.5);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -700,16 +742,40 @@
     animation: float 3s ease-in-out infinite;
 }
 
-.wildlife-card:nth-child(1) .wildlife-icon { animation-delay: 0s; }
-.wildlife-card:nth-child(2) .wildlife-icon { animation-delay: 0.5s; }
-.wildlife-card:nth-child(3) .wildlife-icon { animation-delay: 1s; }
-.wildlife-card:nth-child(4) .wildlife-icon { animation-delay: 1.5s; }
-.wildlife-card:nth-child(5) .wildlife-icon { animation-delay: 2s; }
-.wildlife-card:nth-child(6) .wildlife-icon { animation-delay: 2.5s; }
+.wildlife-card:nth-child(1) .wildlife-icon {
+    animation-delay: 0s;
+}
+
+.wildlife-card:nth-child(2) .wildlife-icon {
+    animation-delay: 0.5s;
+}
+
+.wildlife-card:nth-child(3) .wildlife-icon {
+    animation-delay: 1s;
+}
+
+.wildlife-card:nth-child(4) .wildlife-icon {
+    animation-delay: 1.5s;
+}
+
+.wildlife-card:nth-child(5) .wildlife-icon {
+    animation-delay: 2s;
+}
+
+.wildlife-card:nth-child(6) .wildlife-icon {
+    animation-delay: 2.5s;
+}
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .wildlife-name {
@@ -848,8 +914,13 @@
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .difficulty-label {
@@ -932,9 +1003,19 @@
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
 }
 
 .quiz-feedback {

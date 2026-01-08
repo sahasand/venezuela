@@ -155,8 +155,16 @@ class PassportPage {
             badgeCard.style.animationDelay = `${index * 0.05}s`;
             badgeCard.dataset.badgeId = badge.id;
 
+            // Determine icon content (image or emoji)
+            let iconContent;
+            if (badge.image) {
+                iconContent = `<img src="${badge.image}" alt="${badge.name}" class="badge-img" data-emoji="${badge.icon}" onerror="this.outerHTML='<div class=badge-icon>'+this.dataset.emoji+'</div>'">`;
+            } else {
+                iconContent = `<div class="badge-icon">${badge.icon}</div>`;
+            }
+
             badgeCard.innerHTML = `
-                <div class="badge-icon">${badge.icon}</div>
+                ${iconContent}
                 <div class="badge-name">${badge.name}</div>
                 <div class="badge-description">${badge.description}</div>
                 ${!isUnlocked && badgeProgress < 100 ? `
@@ -411,10 +419,18 @@ class PassportPage {
             document.body.appendChild(modal);
         }
 
+        // Determine icon content (image or emoji)
+        let iconContent;
+        if (badge.image) {
+            iconContent = `<img src="${badge.image}" alt="${badge.name}" class="modal-badge-img" data-emoji="${badge.icon}" style="width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem; border-radius: 50%; mix-blend-mode: multiply; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));" onerror="this.outerHTML='<div class=modal-badge-icon>'+this.dataset.emoji+'</div>'">`;
+        } else {
+            iconContent = `<div class="modal-badge-icon">${badge.icon}</div>`;
+        }
+
         modal.innerHTML = `
             <div class="badge-modal-content">
                 <button class="modal-close" onclick="document.getElementById('badge-modal').classList.remove('show')">×</button>
-                <div class="modal-badge-icon">${badge.icon}</div>
+                ${iconContent}
                 <div class="modal-badge-name">${badge.name}</div>
                 <div class="modal-badge-description">${badge.description}</div>
                 <div class="modal-badge-status ${isUnlocked ? 'unlocked' : 'locked'}">
@@ -532,7 +548,7 @@ class PassportPage {
             return Math.random() * (max - min) + min;
         }
 
-        const interval = setInterval(function() {
+        const interval = setInterval(function () {
             const timeLeft = animationEnd - Date.now();
 
             if (timeLeft <= 0) {

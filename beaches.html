@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/beaches.css">
 </head>
+
 <body>
     <!-- Navigation Header -->
     <header class="main-header">
@@ -15,7 +17,12 @@
                 <span class="logo-icon">🌴</span>
                 <span class="logo-text">Venezuela</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="beaches.html" class="active">Beaches</a></li>
                 <li><a href="attractions.html">Attractions</a></li>
@@ -74,15 +81,7 @@
                 <div class="card-inner">
                     <!-- Front of Card -->
                     <div class="card-front">
-                        <div class="beach-css-art los-roques-art">
-                            <div class="sky-gradient"></div>
-                            <div class="ocean-gradient"></div>
-                            <div class="island island-1"></div>
-                            <div class="island island-2"></div>
-                            <div class="island island-3"></div>
-                            <div class="coral coral-1"></div>
-                            <div class="coral coral-2"></div>
-                        </div>
+                        <img src="images/los-roques.png" alt="Los Roques" class="beach-img">
                         <div class="card-info">
                             <h3 class="beach-name">Los Roques Archipelago</h3>
                             <p class="beach-tagline">Remote Caribbean Paradise</p>
@@ -123,15 +122,7 @@
                 <div class="card-inner">
                     <!-- Front of Card -->
                     <div class="card-front">
-                        <div class="beach-css-art morrocoy-art">
-                            <div class="sky-gradient"></div>
-                            <div class="water-gradient"></div>
-                            <div class="mangrove mangrove-1"></div>
-                            <div class="mangrove mangrove-2"></div>
-                            <div class="mangrove mangrove-3"></div>
-                            <div class="cayo cayo-1"></div>
-                            <div class="cayo cayo-2"></div>
-                        </div>
+                        <img src="images/morrocoy.png" alt="Morrocoy National Park" class="beach-img">
                         <div class="card-info">
                             <h3 class="beach-name">Morrocoy National Park</h3>
                             <p class="beach-tagline">Coastal Paradise</p>
@@ -172,15 +163,7 @@
                 <div class="card-inner">
                     <!-- Front of Card -->
                     <div class="card-front">
-                        <div class="beach-css-art margarita-art">
-                            <div class="sky-gradient"></div>
-                            <div class="ocean-blue"></div>
-                            <div class="island-large"></div>
-                            <div class="beach-strip"></div>
-                            <div class="palm palm-1"></div>
-                            <div class="palm palm-2"></div>
-                            <div class="boat"></div>
-                        </div>
+                        <img src="images/margarita-island.png" alt="Margarita Island" class="beach-img">
                         <div class="card-info">
                             <h3 class="beach-name">Margarita Island</h3>
                             <p class="beach-tagline">Pearl of the Caribbean</p>
@@ -315,19 +298,55 @@
 
         <div class="gallery-carousel">
             <div class="gallery-track">
-                <div class="gallery-photo photo-1" data-photo="1"></div>
-                <div class="gallery-photo photo-2" data-photo="2"></div>
-                <div class="gallery-photo photo-3" data-photo="3"></div>
-                <div class="gallery-photo photo-4" data-photo="4"></div>
-                <div class="gallery-photo photo-5" data-photo="5"></div>
-                <div class="gallery-photo photo-6" data-photo="6"></div>
+                <div class="gallery-photo" data-photo="1">
+                    <img src="images/gallery/gallery_los_roques_1.png" alt="Starfish in Los Roques">
+                    <div class="photo-overlay"><span>Los Roques</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="2">
+                    <img src="images/gallery/gallery_morrocoy_1.png" alt="Morrocoy National Park">
+                    <div class="photo-overlay"><span>Morrocoy</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="3">
+                    <img src="images/gallery/gallery_margarita_1.png" alt="Windsurfing in Margarita">
+                    <div class="photo-overlay"><span>Margarita</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="4">
+                    <img src="images/gallery/gallery_choroni.png" alt="Fishing boats in Choroní">
+                    <div class="photo-overlay"><span>Choroní</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="5">
+                    <img src="images/gallery/gallery_mochima.png" alt="Dolphins in Mochima">
+                    <div class="photo-overlay"><span>Mochima</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="6">
+                    <img src="images/gallery/gallery_sunset.png" alt="Caribbean Sunset">
+                    <div class="photo-overlay"><span>Sunset</span></div>
+                </div>
                 <!-- Duplicate for infinite scroll -->
-                <div class="gallery-photo photo-1" data-photo="1"></div>
-                <div class="gallery-photo photo-2" data-photo="2"></div>
-                <div class="gallery-photo photo-3" data-photo="3"></div>
-                <div class="gallery-photo photo-4" data-photo="4"></div>
-                <div class="gallery-photo photo-5" data-photo="5"></div>
-                <div class="gallery-photo photo-6" data-photo="6"></div>
+                <div class="gallery-photo" data-photo="1">
+                    <img src="images/gallery/gallery_los_roques_1.png" alt="Starfish in Los Roques">
+                    <div class="photo-overlay"><span>Los Roques</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="2">
+                    <img src="images/gallery/gallery_morrocoy_1.png" alt="Morrocoy National Park">
+                    <div class="photo-overlay"><span>Morrocoy</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="3">
+                    <img src="images/gallery/gallery_margarita_1.png" alt="Windsurfing in Margarita">
+                    <div class="photo-overlay"><span>Margarita</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="4">
+                    <img src="images/gallery/gallery_choroni.png" alt="Fishing boats in Choroní">
+                    <div class="photo-overlay"><span>Choroní</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="5">
+                    <img src="images/gallery/gallery_mochima.png" alt="Dolphins in Mochima">
+                    <div class="photo-overlay"><span>Mochima</span></div>
+                </div>
+                <div class="gallery-photo" data-photo="6">
+                    <img src="images/gallery/gallery_sunset.png" alt="Caribbean Sunset">
+                    <div class="photo-overlay"><span>Sunset</span></div>
+                </div>
             </div>
         </div>
 
@@ -418,4 +437,5 @@
     <script src="js/universal.js"></script>
     <script src="js/beaches.js"></script>
 </body>
+
 </html>
