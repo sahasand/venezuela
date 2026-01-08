@@ -1092,6 +1092,16 @@
 
     .quiz-options {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .quiz-option {
+        min-height: 48px;
+    }
+
+    .modal-close {
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .attraction-card {

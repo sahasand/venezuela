@@ -1121,6 +1121,11 @@
 
     .quiz-options {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .quiz-option {
+        min-height: 48px;
     }
 
     .beach-card {

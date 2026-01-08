@@ -433,6 +433,15 @@
 
     .map-container {
         padding: 0 1rem;
+        perspective: none;
+    }
+
+    .venezuela-map {
+        transform: none;
+    }
+
+    .venezuela-map:hover {
+        transform: none;
     }
 
     .marker-label {
@@ -461,7 +470,10 @@
         padding-top: 2.5rem;
     }
 
-
+    .info-card-close {
+        min-width: 44px;
+        min-height: 44px;
+    }
 
     .info-card-title {
         font-size: 1.5rem;
